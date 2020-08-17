@@ -1,9 +1,19 @@
-nav ul li {
-  text-decoration: none;
-  display: inline-block;
-  margin-right: .3em;
+body {
+  background-image: url("../assets/images/inkyheaven-bg.jpg");
+  background-size: 30%;
+  margin: 0 auto;
+}
+
+main {
+  min-height: 90vh;
+  color: white;
+}
+
+.home {
+  margin: 0 auto;
+  width: 300px;
 }
 
 h1 {
-  color: chartreuse;
+  text-shadow: 2px 2px 5px black;
 }
