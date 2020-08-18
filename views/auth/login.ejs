@@ -1,9 +1,49 @@
 <form action="/auth/login" method="POST">
   <label for="auth-email">Email</label>
-  <input id="auth-email" type="email" name="email">
+  <input id="auth-email" type="email" name="email" />
 
   <label for="auth-password">Password</label>
-  <input id="auth-password" type="password" name="password">
+  <input id="auth-password" type="password" name="password" />
 
-  <input type="submit" value="Log In">
+  <input type="submit" value="Log In" />
+</form>
+
+<!-- login form -->
+<form action="/auth/login" method="POST">
+  <div class="row login">
+    <div class="col s12 14 offset-14">
+      <div class="card">
+        <div class="card-action green white-text">
+          <h3>Login Form</h3>
+        </div>
+
+        <div class="card-content">
+          <div class="form-field">
+            <label for="auth-email">Email</label>
+            <input id="auth-email" type="email" name="email" />
+          </div>
+          <br />
+
+          <div class="form-field">
+            <label for="auth-password">Password</label>
+            <input id="auth-password" type="password" name="password" />
+          </div>
+          <br />
+
+          <div class="form-field">
+            <input id="remember" type="checkbox" name="remember" />
+            <label for="remember">Remember me</label>
+          </div>
+          <br />
+
+          <div class="form-field center-align">
+            <button class="btn-large green">
+              Login
+            </button>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
 </form>
