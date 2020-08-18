@@ -55,8 +55,16 @@ app.get("/search", isLoggedIn, (req, res) => {
   res.render("search");
 });
 
+app.get("/result", (req, res) => {
+  res.render("result");
+});
+
 app.get("/mylocation", (req, res) => {
   res.render("mylocation");
+});
+
+app.get("/edit", (req, res) => {
+  res.render("edit");
 });
 
 app.use("/auth", require("./routes/auth"));
