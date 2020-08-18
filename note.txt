@@ -4,15 +4,16 @@
 /search
 /result
 /mylocation
+/edit
 /logout
 
 /mylocations
-  create
-  index
-  show
-  edit
-  delete
+  create done
+  index TODO:
+  show TODO:
+  edit TODO:
+  delete TODO:
 /users
-  create
+  create done
 /auth
-  create
+  create done

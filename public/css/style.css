@@ -14,9 +14,10 @@ main {
 }
 
 .home {
-  position: absolute;
+  /* position: absolute;
   bottom: 0;
-  left: 0;
+  left: 0; */
+  margin-top: 100px;
 }
 
 .login {
@@ -38,5 +39,27 @@ main {
 }
 
 .login button:hover {
+  padding: 0px 40px;
+}
+
+.signup {
+  margin-top: 100px;
+}
+
+.signup .card {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.signup label {
+  font-size: 16px;
+  color: #ccc;
+}
+
+.signup input {
+  font-size: 22px !important;
+  color: #fff;
+}
+
+.signup button:hover {
   padding: 0px 40px;
 }

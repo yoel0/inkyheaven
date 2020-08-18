@@ -1,12 +1,52 @@
+<!-- Signup form -->
 <form action="/auth/signup" method="POST">
+  <div class="row signup">
+    <div class="col s12 14 offset-14">
+      <div class="card">
+        <div class="card-action green white-text">
+          <h3>Signup Form</h3>
+        </div>
+
+        <div class="card-content">
+          <div class="form-field">
+            <label for="new-email">Email</label>
+            <input id="new-email" type="email" name="email" />
+          </div>
+          <br />
+
+          <div class="form-field">
+            <label for="new-name">Name</label>
+            <input id="new-name" type="text" name="name" />
+          </div>
+          <br />
+
+          <div class="form-field">
+            <label for="new-password">Password</label>
+            <input id="new-password" type="password" name="password" />
+          </div>
+          <br />
+
+          <div class="form-field center-align">
+            <button class="btn-large green" type="submit" value="Sign up">
+              Signup
+            </button>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- <form action="/auth/signup" method="POST">
   <label for="new-email">Email</label>
-  <input id="new-email" type="email" name="email">
+  <input id="new-email" type="email" name="email" />
 
   <label for="new-name">Name</label>
-  <input id="new-name" type="text" name="name">
+  <input id="new-name" type="text" name="name" />
 
   <label for="new-password">Password</label>
-  <input id="new-password" type="password" name="password">
+  <input id="new-password" type="password" name="password" />
 
-  <input type="submit" value="Sign up">
-</form>
+  <input type="submit" value="Sign up" />
+</form> -->
