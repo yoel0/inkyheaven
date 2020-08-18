@@ -1,6 +1,12 @@
 <nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo right">Logo</a>
+  <div class="nav-wrapper green lighten-3">
+    <a href="#" class="brand-logo right"
+      ><img
+        src="/public/assets/images/inkyheavenlogo.png"
+        width="150"
+        height="auto"
+      />inky Heaven</a
+    >
     <ul id="nav-mobile" class="left hide-on-med-and-down">
       <li><a href="/">Home</a></li>
       <% if (!currentUser) { %>
@@ -8,7 +14,8 @@
       <li><a href="/auth/login">Login</a></li>
       <% } else { %>
       <li><a href="/auth/logout">Logout</a></li>
-      <li><a href="/profile">Profile</a></li>
+      <li><a href="/search">Search</a></li>
+      <li><a href="/mylocation">My Locations</a></li>
       <% } %>
     </ul>
   </div>

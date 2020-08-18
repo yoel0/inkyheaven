@@ -1,0 +1,18 @@
+/home 
+/signup
+/login
+/search
+/result
+/mylocation
+/logout
+
+/mylocations
+  create
+  index
+  show
+  edit
+  delete
+/users
+  create
+/auth
+  create
