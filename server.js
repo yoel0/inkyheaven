@@ -7,10 +7,10 @@ const session = require("express-session");
 const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require("./config/ppConfig");
 const flash = require("connect-flash");
-const routes = require("./routes");
 
 // require the authorization middleware at the top of the page
 const isLoggedIn = require("./middleware/isLoggedIn");
+const db = require("./models");
 
 app.set("view engine", "ejs");
 
@@ -48,27 +48,24 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-  res.render("index", { alerts: req.flash() });
-});
-
-app.get("/search", isLoggedIn, (req, res) => {
-  res.render("search");
-});
-
-app.get("/result", (req, res) => {
-  res.render("result");
-});
-
-app.get("/mylocation", (req, res) => {
-  res.render("mylocation");
-});
-
-app.get("/edit", (req, res) => {
-  res.render("edit");
+  if (isLoggedIn) {
+    // console.log(isLoggedIn);
+    db.user.findOne()
+      .then((currentUser) => {
+        // console.log(currentUser);
+        res.render("index", { alerts: req.flash(), currentUser });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  } else {
+    res.render("index", { alerts: req.flash() });
+  }
 });
 
 app.use("/auth", require("./routes/auth"));
-app.use("/mylocations", routes.mylocations);
+app.use("/locations", require("./routes/locations"));
+app.use("/user", require("./routes/user"));
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {

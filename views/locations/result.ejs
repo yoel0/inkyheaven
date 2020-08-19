@@ -1,0 +1,17 @@
+<h1>Results</h1>
+
+<% locations.forEach(location => { %>
+    <div>
+      <h2><%= location.name %></h2>
+      <h3>Region: <%= location.region %></h3>
+      <h3>Country: <%= location.country %></h3>
+      <h3>latitude: <%= location.lat %></h3>
+      <h3>longitude: <%= location.lon %></h3>
+      <form method="GET" action="locations/detail">
+        <input type="hidden" name="lat" id="lat" value="<%= location.lat %>">
+        <input type="hidden" name="lon" id="lon" value="<%= location.lon %>">
+        <button type="submit">Details</button>
+      </form>
+    </div>
+
+<% }) %>

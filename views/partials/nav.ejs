@@ -3,7 +3,7 @@
     <a href="#" class="brand-logo right"
       ><img
         src="/public/assets/images/inkyheavenlogo.png"
-        width="150"
+        width="50"
         height="auto"
       />inky Heaven</a
     >
@@ -14,8 +14,7 @@
       <li><a href="/auth/login">Login</a></li>
       <% } else { %>
       <li><a href="/auth/logout">Logout</a></li>
-      <li><a href="/search">Search</a></li>
-      <li><a href="/mylocation">My Locations</a></li>
+      <li><a href="/user/<%= currentUser.id %>"><%= currentUser.name %> </a></li>
       <% } %>
     </ul>
   </div>

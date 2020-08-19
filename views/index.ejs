@@ -1,5 +1,5 @@
-<div class="home">
-  <div class="row">
+<div class="container">
+  <div class="row about">
     <div class="col s12 m6">
       <div class="card green lighten-3">
         <div class="card-content white-text">
@@ -9,14 +9,24 @@
           >
           <p>Access the inky Heaven Weather Portal.</p>
         </div>
-        <div class="card-action">
-          <a href="/auth/signup" class="green lighten-4 btn-small"
-            ><i class="material-icons right">brush</i>Signup</a
-          >
-          <a href="/auth/login" class="green lighten-4 btn-small"
-            ><i class="material-icons right">timeline</i>Login</a
-          >
+        <% if (currentUser) { %> 
+        <div>
+          <form method="GET" action="/locations">
+            <input type="text" name="search" id="search" required>
+            <button type="submit">Launch Search</button>
+          </form>
         </div>
+        <% } else { %>
+          <div class="card-action">
+            <a href="/auth/signup" class="green lighten-4 btn-small"
+              ><i class="material-icons right">brush</i>Signup</a
+            >
+            <a href="/auth/login" class="green lighten-4 btn-small"
+              ><i class="material-icons right">timeline</i>Login</a
+            >
+          </div>
+          
+        <% } %>
       </div>
     </div>
   </div>
