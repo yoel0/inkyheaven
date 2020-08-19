@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const passport = require("../config/ppConfig");
+const isLoggedIn = require('../middleware/isLoggedIn')
 
 router.get("/signup", (req, res) => {
   res.render("auth/signup");
@@ -59,7 +60,7 @@ router.post(
   })
 );
 
-router.get("/logout", (req, res) => {
+router.get("/logout", isLoggedIn, (req, res) => {
   req.logOut();
   // FLASH MESSAGE
   req.flash("success", "See you soon. Logging out.");

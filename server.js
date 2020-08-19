@@ -48,18 +48,18 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-  if (isLoggedIn) {
+  if (req.user) {
     // console.log(isLoggedIn);
     db.user.findOne()
       .then((currentUser) => {
         // console.log(currentUser);
-        res.render("index", { alerts: req.flash(), currentUser });
+        res.render("index", { alerts: res.locals.alerts, currentUser });
       })
       .catch((error) => {
         console.log(error);
       });
   } else {
-    res.render("index", { alerts: req.flash() });
+    res.render("index", { alerts: res.locals.alerts });
   }
 });
 
