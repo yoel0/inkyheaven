@@ -1,1 +1,37 @@
-<h1>Forecast for: <%= forecast.location.name  %> </h1>
+<div class="container green lighten-3 center-align">
+  <h4>Forecast for: <%= forecast.location.name %>, <%= forecast.location.region%> | <%= forecast.location.localtime%></h4>
+  <div class="left-align">
+  <h5>Current Temp: <%= forecast.current.temp_f  %> &#8457; | <%= forecast.current.temp_c  %> &#8451;</h5>
+</div>
+<div class="center-align">
+<h5><%= forecast.current.condition.text %>
+<img src="<%= forecast.current.condition.icon %>" width="50" height="auto"></h5>
+</div>
+<div class="right-align">
+  text to show here <%= forecast.forecast.forecastday[0].astro.sunrise %>
+</div>
+<div class="left-align">
+  <% if (forecast.alert.headline) { %>
+    <h5><i class="material-icons">notifications_active</i>Alerts:</h5>
+      <p><%= forecast.alert.headline %></p>
+    <h5>Areas effected:</h5>
+      <p><%= forecast.alert.areas %></p>
+    <h5>Alert Effective and Expiry Dates:</h5>
+      <p>Effective: <%= forecast.alert.effective %> Expires: <%= forecast.alert.expires %></p>
+    <h5>Alert Description:</h5>
+      <p><%= forecast.alert.desc %></p>
+    <h5>Alert Instruction:</h5>
+      <p><%= forecast.alert.instruction %></p>
+  <% } else { %> 
+    <p>No Alerts to display.</p>
+<%  } %>
+</div>
+<form method="POST" action="/locations">
+  <input type="hidden" name="title" id="title" value="<%= forecast.location.name %>">
+  <input type="hidden" name="lat" id="lat" value="<%= forecast.location.lat %>">
+  <input type="hidden" name="long" id="long" value="<%= forecast.location.lon %>">
+  <div class="right-align">
+  <button class="btn waves-effect waves-light green" type="submit"><i class="material-icons right">save</i>Save to Profile</button>
+  </div>
+</form>
+

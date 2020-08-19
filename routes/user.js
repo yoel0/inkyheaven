@@ -2,12 +2,14 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-router.get("/:id", (req, res) => {
-  console.log("this is the user id: ", req.params.id)
+router.get("/", (req, res) => {
   db.user.findOne({
-    where: { id: req.params.id }
-  })
+    where: { id: req.user.id },
+    include: [
+    db.myLocation
+    ]})
   .then(currentUser => {
+    console.log('💩', currentUser)
     res.render("user/profile", { currentUser });
   })
   .catch(error => {

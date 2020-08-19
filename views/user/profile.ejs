@@ -1,3 +1,23 @@
 <div>
   <h1>Welcome, <%= currentUser.name  %> </h1>
+  <% currentUser.myLocations.forEach(location => { %>
+    <h4><%= location.title %></h4>
+    <form method="GET" action="locations/detail">
+    <input type="hidden" name="lat" id="lat" value="<%= location.lat %>">
+    <input type="hidden" name="lon" id="lon" value="<%= location.long %>">
+    <div class="right-align">
+    <button class="btn waves-effect waves-light green" type="submit"><i class="material-icons right">find_in_page</i>Details</button>
+    </div>
+    </form>
+    <form method="GET" action="/locations/<%= location.id %>" >
+    <div class="right-align">
+    <button class="btn waves-effect waves-light green" type="submit"><i class="material-icons right">edit_location</i>Edit</button>
+    </div>
+    </form>
+    <form method="POST" action="/locations/<%= location.id %>?_method=DELETE" >
+    <div class="right-align">
+    <button class="btn waves-effect waves-light green" type="submit"><i class="material-icons right">delete_sweep</i>Delete</button>
+    </div>
+    </form>
+  <% }) %>
 </div>
