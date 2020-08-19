@@ -1,16 +1,21 @@
+<div class="center-align">
 <h1>Results</h1>
-
+</div>
 <% locations.forEach(location => { %>
-    <div>
+    <div class="container green lighten-3 center-align">
       <h2><%= location.name %></h2>
+      <div class="left-align">
       <h3>Region: <%= location.region %></h3>
       <h3>Country: <%= location.country %></h3>
       <h3>latitude: <%= location.lat %></h3>
       <h3>longitude: <%= location.lon %></h3>
+      </div>
       <form method="GET" action="locations/detail">
         <input type="hidden" name="lat" id="lat" value="<%= location.lat %>">
         <input type="hidden" name="lon" id="lon" value="<%= location.lon %>">
-        <button type="submit">Details</button>
+        <div class="right-align">
+        <button class="btn waves-effect waves-light green" type="submit"><i class="material-icons right">find_in_page</i>Details</button>
+        </div>
       </form>
     </div>
 
