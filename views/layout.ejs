@@ -19,11 +19,19 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <%- include('partials/nav') %>
-    <main>
-      <%- include('partials/alerts') -%> <%- body %>
-    </main>
-    <%- include('partials/footer') %>
+    <div id="page-container">
+      <div id="content-wrap">
+        <header>
+          <%- include('partials/nav') %>
+        </header>
+        <main>
+          <%- include('partials/alerts') -%> <%- body %>
+        </main>
+      </div>
+      <footer id="footer">
+        <%- include('partials/footer') %>
+      </footer>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>

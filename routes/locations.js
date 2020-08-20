@@ -14,6 +14,7 @@ router.get("/", (req, res) => {
     .then((results) => {
       console.log("API DATA: ", results.data);
       let locations = results.data;
+
       res.render("locations/result", { locations });
     })
     .catch((error) => {
@@ -25,6 +26,7 @@ router.get("/detail", (req, res) => {
   // console.log(req.query.lat)
   let lat = req.query.lat;
   let lon = req.query.lon;
+
   axios
     .get(forecastURL + lat + "," + lon)
     .then((details) => {

@@ -7,7 +7,7 @@
             >inky Heaven <br />
             Weather + Astronomy at the touch of your fingertips..</span
           >
-          <p>Access the inky Heaven Weather Portal.</p>
+          <p>Access the inky Heaven Weather and Astronomy Portal.</p>
         </div>
         <% if (currentUser) { %>
         <div>
@@ -17,7 +17,7 @@
                 type="search"
                 name="search"
                 id="search"
-                placeholder=" search by any global location or zipcode"
+                placeholder="Search Globaly Here.."
                 required
               />
             </div>
@@ -33,10 +33,12 @@
         </div>
         <% } else { %>
         <div class="card-action">
-          <a href="/auth/signup" class="green btn-small"
+          <a
+            href="/auth/signup"
+            class="green btn-small waves-effect waves-light"
             ><i class="material-icons right">brush</i>Signup</a
           >
-          <a href="/auth/login" class="green btn-small"
+          <a href="/auth/login" class="green btn-small waves-effect waves-light"
             ><i class="material-icons right">timeline</i>Login</a
           >
         </div>
