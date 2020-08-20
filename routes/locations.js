@@ -57,12 +57,34 @@ router.post('/', (req, res) => {
   })
 })
 
-router.get('/:id', (req, res) => {
+router.get('/edit/:id', (req, res) => {
   console.log('hitting the edit route')
-  // use the id to grab the title from the location db, pass in the title to the edit.ejs page on render
+  res.render('user/edit', {
+    title: req.query.title,
+    id: req.params.id
+  })
 })
 
-// router PUT/id route then will update db req.params.id update title
+// router PUT/ route then will update db req.params.id update title
+// STEPS: findOne db.mylocation.findOne
+// look for where the id matches req.params.id
+// then db.myLocation.update()
+// then set title to be req.body.title
+// then redirect to profile
+
+router.put("/edit/:id", (req, res) => {
+  db.myLocation.update({
+        title: req.body.title
+      }, {where: {
+        id: req.params.id,
+  }},)
+      .then(mylocations => {
+        res.redirect('/user')
+      })
+      .catch((error) => {
+        console.log('Error:', error)
+      })
+    })
 
 
 router.delete('/:id', (req, res) => {

@@ -9,7 +9,7 @@ body {
 }
 
 main {
-  min-height: 90vh;
+  min-height: 120vh;
   color: white;
 }
 
@@ -59,4 +59,8 @@ main {
 
 .signup button:hover {
   padding: 0px 40px;
+}
+
+input {
+  color: white;
 }
