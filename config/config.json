@@ -12,6 +12,7 @@
   "production": {
     "database": "inkyheaven",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "use_env_variable": "postgres://myuyyylpkdzjeq:775e0d1ad6d465c8be66dbab588dc58262402a9a52bc4a7b402239f18f31641f@ec2-52-22-94-132.compute-1.amazonaws.com:5432/d46g1421j0l5ii"
   }
 }
