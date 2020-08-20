@@ -9,27 +9,38 @@
           >
           <p>Access the inky Heaven Weather Portal.</p>
         </div>
-        <% if (currentUser) { %> 
+        <% if (currentUser) { %>
         <div>
           <form method="GET" action="/locations">
             <div class="input-field">
-            <input type="search" name="search" id="search" required>
+              <input
+                type="search"
+                name="search"
+                id="search"
+                placeholder=" search by any global location or zipcode"
+                required
+              />
             </div>
             <div class="right-align">
-            <button class="btn-small waves-effect waves-light green" type="submit"><i class="material-icons right">search</i>Search</button>
+              <button
+                class="btn-small waves-effect waves-light green"
+                type="submit"
+              >
+                <i class="material-icons right">search</i>Search
+              </button>
             </div>
           </form>
         </div>
         <% } else { %>
-          <div class="card-action">
-            <a href="/auth/signup" class="green btn-small"
-              ><i class="material-icons right">brush</i>Signup</a
-            >
-            <a href="/auth/login" class="green btn-small"
-              ><i class="material-icons right">timeline</i>Login</a
-            >
-          </div>
-          
+        <div class="card-action">
+          <a href="/auth/signup" class="green btn-small"
+            ><i class="material-icons right">brush</i>Signup</a
+          >
+          <a href="/auth/login" class="green btn-small"
+            ><i class="material-icons right">timeline</i>Login</a
+          >
+        </div>
+
         <% } %>
       </div>
     </div>

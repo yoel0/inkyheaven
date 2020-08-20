@@ -1,9 +1,16 @@
 <div class="container">
-<form method="POST" action="/locations/edit/<%= id %>?_method=PUT">
-<label for="title">Change my location name!</label>
-<div class="input-field">
-<input type="text" name="title" id="title" placeholder="Edit this location title <%= title %>">
-</div>
-<button class="btn waves-effect waves-light green" type="submit"><i class="material-icons right">save</i>Save Changes</button>
-</form>
+  <form method="POST" action="/locations/edit/<%= id %>?_method=PUT">
+    <label for="title">Change my location name!</label>
+    <div class="input-field">
+      <input
+        type="text"
+        name="title"
+        id="title"
+        placeholder="Edit this location title <%= title %>"
+      />
+    </div>
+    <button class="btn waves-effect waves-light green" type="submit">
+      <i class="material-icons right">save</i>Save Changes
+    </button>
+  </form>
 </div>

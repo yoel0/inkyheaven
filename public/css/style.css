@@ -9,7 +9,7 @@ body {
 }
 
 main {
-  min-height: 120vh;
+  min-height: 150vh;
   color: white;
 }
 
@@ -62,5 +62,9 @@ main {
 }
 
 input {
+  color: white;
+}
+
+::placeholder {
   color: white;
 }
