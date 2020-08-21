@@ -28,6 +28,10 @@ main {
   height: 2.5rem; /* Footer height */
 }
 
+#mapid {
+  height: 200px;
+}
+
 .about {
   margin-top: 100px;
 }

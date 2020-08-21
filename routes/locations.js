@@ -34,7 +34,7 @@ router.get("/detail", (req, res) => {
       // console.log(details.data.forecast.forecastday[0])
       let forecast = details.data;
       // console.log(forecast.alert)
-      res.render("locations/detail", { forecast });
+      res.render("locations/detail", { forecast, lat, lon });
     })
     .catch((error) => {
       console.log("Error: ", error);

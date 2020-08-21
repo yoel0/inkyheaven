@@ -9,7 +9,7 @@
       &#8457; | <%= forecast.current.temp_c %> &#8451;
     </h5>
   </div>
-  <div class="center-align">
+  <div class="left-align">
     <h5>
       <%= forecast.current.condition.text %>
       <img
@@ -19,13 +19,18 @@
       />
     </h5>
   </div>
-  <div class="left-align">
-    <h5>Astronomy<i class="material-icons">hdr_strong</i></h5>
-    <p>Sunrise @<%= forecast.forecast.forecastday[0].astro.sunrise %></p>
-    <p>Sunset @<%= forecast.forecast.forecastday[0].astro.sunset %></p>
-    <p>Moonrise @<%= forecast.forecast.forecastday[0].astro.moonrise %></p>
-    <p>Moonset @<%= forecast.forecast.forecastday[0].astro.moonset %></p>
+  <!-- Leaflet MAP -->
+  <div class="row">
+    <div class="col s6">
+      <h5>Astronomy<i class="material-icons">hdr_strong</i></h5>
+      <p>Sunrise @<%= forecast.forecast.forecastday[0].astro.sunrise %></p>
+      <p>Sunset @<%= forecast.forecast.forecastday[0].astro.sunset %></p>
+      <p>Moonrise @<%= forecast.forecast.forecastday[0].astro.moonrise %></p>
+      <p>Moonset @<%= forecast.forecast.forecastday[0].astro.moonset %></p>
+    </div>
+    <div class="col s6"><div id="mapid"></div></div>
   </div>
+  <!-- MAP END -->
   <div class="center-align">
     <% if (forecast.alert.headline) { %>
     <h5><i class="material-icons">notifications_active</i>Alerts</h5>
@@ -76,3 +81,27 @@
     </div>
   </form>
 </div>
+
+<script
+  src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""
+></script>
+<script
+  type="text/javascript"
+  src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"
+></script>
+
+<script>
+  var lat = <%- lat %>
+  var lon = <%- lon %>
+
+  var mymap = L.map("mapid").setView([lat, lon], 13);
+  L.tileLayer("http://c.tile.stamen.com/terrain/{z}/{x}/{y}.jpg", {
+    attribution:
+      'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+    maxZoom: 18,
+    tileSize: 512,
+    zoomOffset: -1,
+  }).addTo(mymap);
+</script>
