@@ -30,8 +30,9 @@ main {
 }
 
 #mapid {
-  height: 200px;
+  height: 500px;
 }
+
 /* Result Page */
 @import url(https://fonts.googleapis.com/css?family=Lato:900);
 *,
@@ -129,9 +130,18 @@ main {
 }
 
 /* Details Page */
-.detailscontainer {
-  padding: 5px 10px;
-  width: 80%;
+.detailcontainer {
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.dcontentcontainer {
+  padding: 20px;
+}
+
+.dbuttoncontainer {
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 
 /* home page about div */
@@ -189,4 +199,25 @@ input {
 
 ::placeholder {
   color: white;
+}
+
+@media only screen and (max-width: 1210px) {
+  .letter {
+    font-size: 45px;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .letter {
+    font-size: 30px;
+  }
+
+  #mapid {
+    height: 100%;
+  }
+
+  .row .col.s6 {
+    width: 100%;
+    height: 200px;
+  }
 }

@@ -1,9 +1,19 @@
-<div class="detailscontainer">
-  <div class="container green lighten-3 center-align">
-    <h5>
-      Forecast for: <%= forecast.location.name %>, <%=
-      forecast.location.region%> | <%= forecast.location.localtime%>
-    </h5>
+<div class="center-align magicheader">
+  <span class="letter" data-letter="F">F</span>
+  <span class="letter" data-letter="O">O</span>
+  <span class="letter" data-letter="R">R</span>
+  <span class="letter" data-letter="E">E</span>
+  <span class="letter" data-letter="C">C</span>
+  <span class="letter" data-letter="A">A</span>
+  <span class="letter" data-letter="S">S</span>
+  <span class="letter" data-letter="T">T</span>
+</div>
+<div class="container green lighten-3 center-align detailcontainer">
+  <h5>
+    <%= forecast.location.name %>, <%= forecast.location.region%> | <%=
+    forecast.location.localtime%>
+  </h5>
+  <div class="dcontentcontainer">
     <div class="left-align">
       <h5>
         Temp<i class="material-icons">hdr_weak</i> <%= forecast.current.temp_f
@@ -29,58 +39,61 @@
         <p>Moonrise @<%= forecast.forecast.forecastday[0].astro.moonrise %></p>
         <p>Moonset @<%= forecast.forecast.forecastday[0].astro.moonset %></p>
       </div>
-      <div class="col s6"><div id="mapid"></div></div>
+      <div class="col s6 mapbox"><div id="mapid"></div></div>
     </div>
     <!-- MAP END -->
-    <div class="center-align">
-      <% if (forecast.alert.headline) { %>
-      <h5><i class="material-icons">notifications_active</i>Alerts</h5>
-      <p><%= forecast.alert.headline %></p>
-      <br />
-      <h5>Areas effected:</h5>
-      <p><%= forecast.alert.areas %></p>
-      <br />
-      <h5>Alert Effective and Expiry Dates:</h5>
-      <p>
-        Effective: <%= forecast.alert.effective %> Expires: <%=
-        forecast.alert.expires %>
-      </p>
-      <br />
-      <h5>Alert Description:</h5>
-      <p><%= forecast.alert.desc %></p>
-      <br />
-      <h5>Alert Instruction:</h5>
-      <p><%= forecast.alert.instruction %></p>
-      <br />
-      <% } else { %>
-      <p>No Alerts to display.</p>
-      <% } %>
-      <form method="POST" action="/locations">
-        <input
-          type="hidden"
-          name="title"
-          id="title"
-          value="<%= forecast.location.name %>"
-        />
-        <input
-          type="hidden"
-          name="lat"
-          id="lat"
-          value="<%= forecast.location.lat %>"
-        />
-        <input
-          type="hidden"
-          name="long"
-          id="long"
-          value="<%= forecast.location.lon %>"
-        />
-        <div class="right-align">
-          <button class="btn waves-effect waves-light green" type="submit">
-            <i class="material-icons right">save</i>Save to Profile
-          </button>
-        </div>
-      </form>
-    </div>
+  </div>
+  <div class="center-align">
+    <% if (forecast.alert.headline) { %>
+    <h5><i class="material-icons">notifications_active</i>Alerts</h5>
+    <p><%= forecast.alert.headline %></p>
+    <br />
+    <h5>Areas effected:</h5>
+    <p><%= forecast.alert.areas %></p>
+    <br />
+    <h5>Alert Effective and Expiry Dates:</h5>
+    <p>
+      Effective: <%= forecast.alert.effective %> Expires: <%=
+      forecast.alert.expires %>
+    </p>
+    <br />
+    <h5>Alert Description:</h5>
+    <p><%= forecast.alert.desc %></p>
+    <br />
+    <h5>Alert Instruction:</h5>
+    <p><%= forecast.alert.instruction %></p>
+    <br />
+    <% } else { %>
+    <p>No Alerts to display.</p>
+    <% } %>
+    <form method="POST" action="/locations">
+      <input
+        type="hidden"
+        name="title"
+        id="title"
+        value="<%= forecast.location.name %>"
+      />
+      <input
+        type="hidden"
+        name="lat"
+        id="lat"
+        value="<%= forecast.location.lat %>"
+      />
+      <input
+        type="hidden"
+        name="long"
+        id="long"
+        value="<%= forecast.location.lon %>"
+      />
+      <div class="right-align">
+        <button
+          class="btn waves-effect waves-light green dbuttoncontainer"
+          type="submit"
+        >
+          <i class="material-icons right">save</i>Save to Profile
+        </button>
+      </div>
+    </form>
   </div>
 </div>
 
