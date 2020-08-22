@@ -1,31 +1,43 @@
-<h1>Welcome, <%= currentUser.name %></h1>
-<div class="container">
-  <% currentUser.myLocations.forEach(location => { %>
-  <h4><%= location.title %></h4>
-  <form method="GET" action="/locations/detail">
-    <input type="hidden" name="lat" id="lat" value="<%= location.lat %>" />
-    <input type="hidden" name="lon" id="lon" value="<%= location.long %>" />
-    <button class="btn waves-effect waves-light green" type="submit">
-      <i class="material-icons right">find_in_page</i>Details
-    </button>
-  </form>
-  <br />
-  <form method="GET" action="/locations/edit/<%= location.id %>">
-    <input
-      type="hidden"
-      name="title"
-      id="title"
-      value="<%= location.title %>"
-    />
-    <button class="btn waves-effect waves-light green" type="submit">
-      <i class="material-icons right">edit_location</i>Edit
-    </button>
-  </form>
-  <br />
-  <form method="POST" action="/locations/<%= location.id %>?_method=DELETE">
-    <button class="btn waves-effect waves-light green" type="submit">
-      <i class="material-icons right">delete_sweep</i>Delete
-    </button>
-  </form>
-  <% }) %>
+<div class="magicheader">
+  <span class="letter" data-letter="W">W</span>
+  <span class="letter" data-letter="E">E</span>
+  <span class="letter" data-letter="L">L</span>
+  <span class="letter" data-letter="C">C</span>
+  <span class="letter" data-letter="O">O</span>
+  <span class="letter" data-letter="M">M</span>
+  <span class="letter" data-letter="E">E</span>
+  <h1><%= currentUser.name %></h1>
 </div>
+
+<% currentUser.myLocations.forEach(location => { %>
+<div class="container green lighten-3 center-align profilecontainer">
+  <h4 class="profiletitle"><%= location.title %></h4>
+  <div class="btnctrl">
+    <form method="GET" action="/locations/detail">
+      <input type="hidden" name="lat" id="lat" value="<%= location.lat %>" />
+      <input type="hidden" name="lon" id="lon" value="<%= location.long %>" />
+      <button class="btn-small waves-effect waves-light green" type="submit">
+        <i class="material-icons right">find_in_page</i>Details
+      </button>
+    </form>
+    <br />
+    <form method="GET" action="/locations/edit/<%= location.id %>">
+      <input
+        type="hidden"
+        name="title"
+        id="title"
+        value="<%= location.title %>"
+      />
+      <button class="btn-small waves-effect waves-light green" type="submit">
+        <i class="material-icons right">edit_location</i>Edit
+      </button>
+    </form>
+    <br />
+    <form method="POST" action="/locations/<%= location.id %>?_method=DELETE">
+      <button class="btn-small waves-effect waves-light green" type="submit">
+        <i class="material-icons right">delete_sweep</i>Delete
+      </button>
+    </form>
+  </div>
+</div>
+<% }) %>

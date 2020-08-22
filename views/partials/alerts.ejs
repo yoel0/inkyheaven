@@ -1,6 +1,17 @@
 <% if (alerts.error) { %> <% alerts.error.forEach(msg => { %>
-<div class="alert alert-error"><%= msg %></div>
-<% }); %> <% } %> <% if (alerts.success) { %> <% alerts.success.forEach(msg => {
-%>
-<div class="alert alert-success"><%= msg %></div>
-<% }); %> <% } %>
+<nav>
+  <div class="nav-wrapper red darken-4">
+    <div class="alert alert-error"><%= msg %></div>
+  </div>
+</nav>
+<% }); %> 
+<% } %>
+
+<% if (alerts.success) { %> <% alerts.success.forEach(msg => { %>
+<nav>
+  <div class="nav-wrapper light-blue accent-3">
+    <div class="alert alert-success"><%= msg %></div>
+  </div>
+</nav>
+<% }); %> 
+<% } %>
