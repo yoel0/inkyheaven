@@ -77,11 +77,11 @@ Access it here: [inky Heaven](https://inky-heaven.herokuapp.com/)
 
 ## inky Heaven at a Glance;
 
-- ![Home page image](https://imgur.com/sbswlia)
-- ![Search page image](https://imgur.com/yuIYGWh)
-- ![Result page image](https://imgur.com/4ARL9aQ)
-- ![Detail page image](https://imgur.com/XkXVTxd)
-- ![Profile page image](https://imgur.com/2yjoD52)
+- Home Page ![Home page image](https://i.imgur.com/sbswlia.png)
+- Search Page ![Search page image](https://i.imgur.com/yuIYGWh.png)
+- Result Page ![Result page image](https://i.imgur.com/4ARL9aQ.png)
+- Detail Page ![Detail page image](https://i.imgur.com/XkXVTxd.png)
+- Profile Page ![Profile page image](https://i.imgur.com/2yjoD52.png)
 
 ## User Stories
 
@@ -99,15 +99,15 @@ Access it here: [inky Heaven](https://inky-heaven.herokuapp.com/)
 
 ### ERD
 
-[ERD](https://imgur.com/5VUHwQG)
+- ERD ![ERD](https://i.imgur.com/5VUHwQG.png)
 
 ### Initial Wireframe Visualization
 
-- [INDEX Page](https://imgur.com/DSN7jXV)
-- [LOGIN Page](https://imgur.com/jPtIsJu)
-- [SEARCH Page](https://imgur.com/U1FIRuo)
-- [RESULT Page](https://imgur.com/wl7qMGm)
-- [PROFILE Page](https://imgur.com/F5pNWEE)
+- INDEX Page ![INDEX Page](https://i.imgur.com/DSN7jXV.png)
+- LOGIN Page ![LOGIN Page](https://i.imgur.com/jPtIsJu.png)
+- SEARCH Page ![SEARCH Page](https://i.imgur.com/U1FIRuo.png)
+- RESULT Page ![RESULT Page](https://i.imgur.com/wl7qMGm.png)
+- PROFILE Page ![PROFILE Page](https://i.imgur.com/aKQoT6R.png)
 
 ---
 
