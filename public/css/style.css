@@ -146,11 +146,12 @@ main {
   margin-right: 20px;
 }
 
-/* home page about div */
+/* Home Page About Div */
 .about {
   margin-top: 100px;
 }
 
+/* Login and Signup Forms */
 .login {
   margin-top: 100px;
 }
@@ -203,6 +204,7 @@ input {
   color: white;
 }
 
+/* Mobile Responsive */
 @media only screen and (max-width: 1210px) {
   .letter {
     font-size: 45px;
