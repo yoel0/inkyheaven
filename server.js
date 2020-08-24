@@ -20,6 +20,12 @@ const storage = multer.diskStorage({
   },
 });
 
+// Init Upload
+
+const upload = multer({
+  storage: storage,
+}).single(myImage);
+
 // require the authorization middleware at the top of the page
 const isLoggedIn = require("./middleware/isLoggedIn");
 const db = require("./models");
@@ -35,6 +41,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(layouts);
+app.post("/upload", (req, res) => {});
 
 // secret: What we actually giving the user to use our site / session cookie
 // resave: Save the session even if it's modified, make this false
