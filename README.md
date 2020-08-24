@@ -77,11 +77,11 @@ Access it here: [inky Heaven](https://inky-heaven.herokuapp.com/)
 
 ## inky Heaven at a Glance;
 
-- [Home page image](https://imgur.com/sbswlia)
-- [Search page image](https://imgur.com/yuIYGWh)
-- [Result page image](https://imgur.com/4ARL9aQ)
-- [Detail page image](https://imgur.com/XkXVTxd)
-- [Profile page image](https://imgur.com/2yjoD52)
+- ![Home page image](https://imgur.com/sbswlia)
+- ![Search page image](https://imgur.com/yuIYGWh)
+- ![Result page image](https://imgur.com/4ARL9aQ)
+- ![Detail page image](https://imgur.com/XkXVTxd)
+- ![Profile page image](https://imgur.com/2yjoD52)
 
 ## User Stories
 
