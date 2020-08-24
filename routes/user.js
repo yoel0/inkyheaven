@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
       include: [db.myLocation],
     })
     .then((currentUser) => {
-      console.log("🤲", currentUser);
+      // console.log("🤲", currentUser);
       res.render("user/profile", { currentUser });
     })
     .catch((error) => {
