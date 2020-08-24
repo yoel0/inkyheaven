@@ -7,12 +7,12 @@ const searchURL = `http://api.weatherapi.com/v1/search.json?key=${API_KEY}&q=`;
 const forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=`;
 
 router.get("/", (req, res) => {
-  console.log("this is my search: ", req.query.search);
+  // console.log("this is my search: ", req.query.search);
   let search = req.query.search;
   axios
     .get(searchURL + search)
     .then((results) => {
-      console.log("API DATA: ", results.data);
+      // console.log("API DATA: ", results.data);
       let locations = results.data;
 
       res.render("locations/result", { locations });
@@ -62,7 +62,7 @@ router.post("/", (req, res) => {
 });
 
 router.get("/edit/:id", (req, res) => {
-  console.log("hitting the edit route");
+  // console.log("hitting the edit route");
   res.render("user/edit", {
     title: req.query.title,
     id: req.params.id,
