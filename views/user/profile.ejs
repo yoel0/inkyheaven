@@ -44,6 +44,7 @@
 
 <div class="container">
   <h1>File Upload</h1>
+  <%= typeof msg != 'undefined' ? msg : '' %>
   <form action="/upload" method="POST">
     <div class="file-field input-field">
       <div class="btn green">
