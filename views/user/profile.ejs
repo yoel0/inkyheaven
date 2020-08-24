@@ -44,15 +44,16 @@
 
 <div class="container">
   <h1>File Upload</h1>
-  <form action="#">
+  <form action="/upload" method="POST">
     <div class="file-field input-field">
-      <div class="btn">
+      <div class="btn green">
         <span>File</span>
-        <input type="file" />
+        <input name="myImage" type="file" />
       </div>
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text" />
       </div>
     </div>
+    <button type="submit">Submit</button>
   </form>
 </div>
