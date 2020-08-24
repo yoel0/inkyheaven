@@ -75,11 +75,6 @@ app.get("/", (req, res) => {
   }
 });
 
-// Global Error Page
-app.get("*", (req, res) => {
-  res.render("error");
-});
-
 app.use("/auth", require("./routes/auth"));
 app.use("/locations", require("./routes/locations"));
 app.use("/user", require("./routes/user"));
@@ -87,6 +82,11 @@ app.use("/user", require("./routes/user"));
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
+});
+
+// Global Error Page
+app.get("*", (req, res) => {
+  res.render("error");
 });
 
 module.exports = server;

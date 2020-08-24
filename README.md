@@ -263,6 +263,8 @@ This is a really cool word manipulation for hyper visual effect~
 
 > My Mentors
 
+- God-Mode FULL-STACK SR Software Engineer,<br>
+  [Rome "Caesar, JS Conqueror" Bell](https://github.com/romebell)
 - SCRUM Master,<br>
   [Adam "Professor Oak" Honore](https://github.com/ahonore42)
 - Tech Lead, (Special Shoutout for introducing me to the Leaflet JS Library)<br>
@@ -284,3 +286,6 @@ This is a really cool word manipulation for hyper visual effect~
 
 - Shane, a brother in every sense of the word, whenever self doubt kicks in this beautiful soul kicks back can't even count how many times you and I have fought through sheets of code together without sense of time, thirst or hunger it always seems like you and I walk through hell and back what words can I say other than I am blessed to call you a brother.<br>
   [Shane Bendak](https://github.com/SLBendak)
+
+* Big shoutout to Cristina! The best meimei(Sista'), anyone could ask for! her insight, vision of clarity and tranquil approach has always rendered her the sharpest blade in my eyes! Thank you for the Global ERR lessons <3 and most of all for being you, you amazing soul.<br>
+  [Cristina Nguyen](https://github.com/crnguyen)
