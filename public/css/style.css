@@ -29,6 +29,7 @@ main {
   height: 2.5rem; /* Footer height */
 }
 
+/* MAP BOX Canvas */
 #mapid {
   height: 500px;
   text-shadow: none;
