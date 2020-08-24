@@ -9,22 +9,41 @@ const passport = require("./config/ppConfig");
 const flash = require("connect-flash");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-// Set Storage Engine
+// Set The Storage Engine
 const storage = multer.diskStorage({
   destination: "./public/uploads/",
   filename: function (req, file, cb) {
     cb(
       null,
-      file.fieldname + "-" + Date.now() + path.extname(file.orignalname)
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
     );
   },
 });
 
 // Init Upload
-
 const upload = multer({
   storage: storage,
-}).single(myImage);
+  limits: { fileSize: 1000000 },
+  fileFilter: function (req, file, cb) {
+    checkFileType(file, cb);
+  },
+}).single("myImage");
+
+// Check File Type
+function checkFileType(file, cb) {
+  // Allowed ext
+  const filetypes = /jpeg|jpg|png|gif/;
+  // Check ext
+  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+  // Check mime
+  const mimetype = filetypes.test(file.mimetype);
+
+  if (mimetype && extname) {
+    return cb(null, true);
+  } else {
+    cb("Error: Images Only!");
+  }
+}
 
 // require the authorization middleware at the top of the page
 const isLoggedIn = require("./middleware/isLoggedIn");
@@ -41,7 +60,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(layouts);
-app.post("/upload", (req, res) => {});
+app.post("/upload", (req, res) => {
+  res.send("test");
+});
 
 // secret: What we actually giving the user to use our site / session cookie
 // resave: Save the session even if it's modified, make this false
