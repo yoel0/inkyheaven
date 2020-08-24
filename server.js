@@ -45,6 +45,27 @@ function checkFileType(file, cb) {
   }
 }
 
+app.post("/upload", (req, res) => {
+  upload(req, res, (err) => {
+    if (err) {
+      res.render("index", {
+        msg: err,
+      });
+    } else {
+      if (req.file == undefined) {
+        res.render("index", {
+          msg: "Error: No File Selected!",
+        });
+      } else {
+        res.render("index", {
+          msg: "File Uploaded!",
+          file: `uploads/${req.file.filename}`,
+        });
+      }
+    }
+  });
+});
+
 // require the authorization middleware at the top of the page
 const isLoggedIn = require("./middleware/isLoggedIn");
 const db = require("./models");
@@ -60,9 +81,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(layouts);
-app.post("/upload", (req, res) => {
-  res.send("test");
-});
 
 // secret: What we actually giving the user to use our site / session cookie
 // resave: Save the session even if it's modified, make this false
