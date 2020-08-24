@@ -7,6 +7,9 @@
         height="auto"
       />inky Heaven</a
     >
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+      ><i class="material-icons">menu</i></a
+    >
     <ul id="nav-mobile" class="left hide-on-med-and-down">
       <li><a href="/">Home</a></li>
       <% if (!currentUser) { %>
@@ -19,3 +22,13 @@
     </ul>
   </div>
 </nav>
+<ul class="sidenav green lighten-3" id="mobile-demo">
+  <li><a class="white-text" href="/">Home</a></li>
+  <% if (!currentUser) { %>
+  <li><a class="white-text" href="/auth/signup">Signup</a></li>
+  <li><a class="white-text" href="/auth/login">Login</a></li>
+  <% } else { %>
+  <li><a class="white-text" href="/auth/logout">Logout</a></li>
+  <li><a class="white-text" href="/user/"> <%= currentUser.name %> </a></li>
+  <% } %>
+</ul>
