@@ -7,14 +7,25 @@ const session = require("express-session");
 const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require("./config/ppConfig");
 const flash = require("connect-flash");
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
+// Set Storage Engine
+const storage = multer.diskStorage({
+  destination: "./public/uploads/",
+  filename: function (req, file, cb) {
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.orignalname)
+    );
+  },
+});
 
 // require the authorization middleware at the top of the page
 const isLoggedIn = require("./middleware/isLoggedIn");
 const db = require("./models");
 const sessionStore = new SequelizeStore({
   db: db.sequelize,
-  expiration: 1000 * 60 * 30 // session expires after 30 min
+  expiration: 1000 * 60 * 30, // session expires after 30 min
 });
 
 app.set("view engine", "ejs");
@@ -35,7 +46,7 @@ app.use(
     secret: SECRET_SESSION,
     resave: false,
     saveUninitialized: true,
-    store: sessionStore
+    store: sessionStore,
   })
 );
 sessionStore.sync();
@@ -57,11 +68,12 @@ app.use((req, res, next) => {
 app.get("/", (req, res) => {
   if (req.user) {
     // console.log(isLoggedIn);
-    db.user.findOne({
-      where: {
-        id: req.user.id
-      }
-    })
+    db.user
+      .findOne({
+        where: {
+          id: req.user.id,
+        },
+      })
       .then((currentUser) => {
         // console.log(currentUser);
         res.render("index", { alerts: res.locals.alerts, currentUser });
