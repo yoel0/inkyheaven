@@ -75,6 +75,11 @@ app.get("/", (req, res) => {
   }
 });
 
+// Global Error Page
+app.get("*", (req, res) => {
+  res.render("error");
+});
+
 app.use("/auth", require("./routes/auth"));
 app.use("/locations", require("./routes/locations"));
 app.use("/user", require("./routes/user"));
