@@ -8,6 +8,7 @@ const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require("./config/ppConfig");
 const flash = require("connect-flash");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const multer = require("multer");
 
 // Set The Storage Engine
 const storage = multer.diskStorage({
