@@ -1,3 +1,4 @@
+/* MAIN Layout Page Styling */
 body {
   background: url("../assets/images/treebg.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -8,7 +9,6 @@ body {
   font-family: "Open Sans", sans-serif;
   text-shadow: 2px 2px 5px black;
 }
-
 main {
   color: white;
 }
